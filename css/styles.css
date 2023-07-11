@@ -58,11 +58,14 @@ img {
   max-width: 100%;
   height: auto;
 }
+a,
 .link {
   text-decoration: none;
   color: currentColor;
   font-style: normal;
 }
+ul,
+ol,
 .list {
   list-style: none;
 }
@@ -169,9 +172,8 @@ img {
   line-height: 1.07;
   color: var(--White-background-cl);
   text-align: center;
-  margin-bottom: 48px;
   max-width: 496px;
-  margin: 0 auto;
+  margin: 0 auto 48px;
 }
 
 .hero-btn {
@@ -231,6 +233,20 @@ img {
 }
 .features-text {
   color: var(--Text-cl);
+}
+.features-icon-thumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 100px;
+  margin-bottom: 8px;
+  width: 264px;
+  height: 112px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background-color: var(--light-bg-cl);
+}
+.features-icon {
 }
 /*Do section*/
 .do-section {
@@ -301,6 +317,12 @@ img {
 .team-position-text {
   line-height: 1.5;
   color: var(--Text-cl);
+}
+.team-social-list {
+}
+.team-social-item {
+}
+.team-social-link {
 }
 
 /* Portfolio main styles*/
