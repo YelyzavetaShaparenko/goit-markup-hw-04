@@ -8,6 +8,9 @@
   --White-background-cl: #ffffff;
   --light-bg-cl: #f4f4fd;
   --cornfiower-cl: #e7e9fc;
+  --success-cl: #31d0aa;
+  --white-cl: #ffffff;
+  --lightslate: #8e8f99;
   /* The main number of elements in Flexbox grid */
   --items: 3;
   /* The main gap indent in Flexbox grid */
@@ -190,6 +193,7 @@ ol,
   margin: 0 auto;
   border-radius: 4px;
   border: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-btn:hover,
 .hero-btn:focus {
@@ -235,9 +239,9 @@ ol,
   color: var(--Text-cl);
 }
 .features-icon-thumb {
-  display: flex;
+  /*display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;*/
   padding: 24px 100px;
   margin-bottom: 8px;
   width: 264px;
@@ -317,12 +321,74 @@ ol,
 .team-position-text {
   line-height: 1.5;
   color: var(--Text-cl);
+  margin-bottom: 8px;
 }
 .team-social-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--indent);
 }
 .team-social-item {
 }
 .team-social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--Primary-Brand-cl);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.team-social-link:hover,
+.team-social-link:focus {
+  background-color: var(--Pressed-state-cl);
+}
+.team-social-icon {
+  fill: var(--Light-cl);
+}
+
+/*Customers section*/
+.customers-section {
+  background-color: var(--White-background-cl);
+  padding-bottom: 120px;
+  padding-top: 120px;
+}
+.customers-container {
+}
+.container {
+}
+.customers-title {
+  color: var(--Dark-cl);
+  text-align: center;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.72px;
+  text-transform: capitalize;
+  margin-bottom: 72px;
+}
+.customers-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--indent);
+}
+.customers-item {
+}
+.customers-link {
+  display: flex;
+  width: 168px;
+  height: 88px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid var(--lightslate);
+}
+.customers-icon {
+  fill: var(--lightslate);
 }
 
 /* Portfolio main styles*/
@@ -416,4 +482,50 @@ ol,
 .footer-text {
   color: #f4f4fd;
   max-width: 264px;
+}
+
+.footer-container {
+  display: flex;
+  align-items: baseline;
+}
+.footer-logo-container {
+  width: 264px;
+  margin-right: 116px;
+}
+.footer-socisl-container {
+  width: 208px;
+}
+.footer-social-text {
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.32px;
+  text-align: center;
+  color: var(--white-cl);
+  margin: 0 auto 16px 0;
+}
+.footer-social-list {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+.footer-social-item {
+}
+.footer-social-link {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: var(--Primary-Brand-cl);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus {
+  background-color: var(--success-cl);
+}
+.footer-social-icon {
+  fill: var(--Light-cl);
 }
