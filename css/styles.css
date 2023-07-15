@@ -402,16 +402,21 @@ ol,
   align-items: center;
   border-radius: 4px;
   border: 1px solid var(--lightslate);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.customers-link:hover,
+.customers-link:focus {
+  border-color: var(--pressed-state-cl);
 }
 .customers-icon {
   fill: var(--lightslate);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.customers-link:hover .customers-icon {
+.customers-link:hover .customers-icon,
+.customers-link:focus .customers-icon {
   fill: var(--pressed-state-cl);
 }
-.customers-link:hover {
-  border-color: var(--pressed-state-cl);
-}
+
 /* Portfolio main styles*/
 .main {
   background-color: var(--white-background-cl);
@@ -435,7 +440,7 @@ ol,
 }
 
 .portfolio-filter-item {
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /*portfolio page buttons*/
 .portfolio-btn {
@@ -449,7 +454,8 @@ ol,
   padding: 12px 24px;
   border: 1px solid var(--cornfiower-cl);
   border-radius: 4px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-btn:hover,
 .portfolio-btn:focus {
@@ -468,16 +474,17 @@ ol,
 
 .portfolio-list-item {
   flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.portfolio-list-item:hover,
-.portfolio-list-item:focus {
-  border: 1px solid var(--light-bg-cl);
-  background: var(--white-cl);
+
+.portfolio-link {
+  display: block;
+  background-color: var(--white-cl);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-link:hover,
+.portfolio-link:focus {
   box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16),
     0px 1px 6px 0px rgba(46, 47, 66, 0.08);
-}
-.portfolio-link {
 }
 .portfolio-img {
 }
@@ -485,6 +492,12 @@ ol,
 .portfolio-list-card {
   padding: 32px 16px;
   border: 1px solid var(--cornfiower-cl);
+  border-top: none;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-link:hover .portfolio-list-card,
+.portfolio-link:focus .portfolio-list-card {
+  border: 1px solid var(--light-cl);
   border-top: none;
 }
 .portfolio-title {
@@ -497,6 +510,30 @@ ol,
 }
 .portfolio-text {
   color: var(--text-cl);
+}
+/*Portfolio overlay styles*/
+.portfolio-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-brand-cl);
+  padding: 40px 32px 164px;
+  color: var(--light-bg-cl);
+  font-weight: 400;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 400;
+}
+.portfolio-link:hover .portfolio-overlay,
+.portfolio-link:focus .portfolio-overlay {
+  transform: translateY(0);
 }
 /*footer stylse*/
 .footer {
@@ -574,14 +611,21 @@ ol,
   left: 0px;
   width: 100%;
   height: 100%;
-
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: var(--backdrop-cl);
 }
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%) scale(1);
   width: 408px;
   height: 584px;
   border-radius: 4px;
@@ -590,17 +634,30 @@ ol,
     0px 1px 1px 0px rgba(0, 0, 0, 0.14);
 }
 .modal-icon {
-  stroke: var(--modal-icon-cl);
-  margin: 0 auto;
+  fill: var(--modal-icon-cl);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-btn:hover .modal-icon,
+.modal-btn:focus .modal-icon {
+  fill: var(--white-cl);
 }
 .modal-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 24px;
   right: 24px;
-  background-color: transparent;
   width: 24px;
   height: 24px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   background-color: var(--cornfiower-cl);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-btn:hover,
+.modal-btn:focus {
+  background-color: var(--pressed-state-cl);
+  border: none;
 }
