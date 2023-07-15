@@ -13,6 +13,7 @@
   --lightslate: #8e8f99;
   --backdrop-cl: rgba(46, 47, 66, 0.4);
   --modal-bg-cl: #fcfcfc;
+  --modal-icon-cl: #2e2f42;
   /* The main number of elements in Flexbox grid */
   --items: 3;
   /* The main gap indent in Flexbox grid */
@@ -588,8 +589,9 @@ ol,
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2), 0px 1px 3px 0px rgba(0, 0, 0, 0.12),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14);
 }
-.modai-icon {
-  stroke: #2e2f42;
+.modal-icon {
+  stroke: var(--modal-icon-cl);
+  margin: 0 auto;
 }
 .modal-btn {
   position: absolute;
@@ -600,5 +602,5 @@ ol,
   height: 24px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  background-color: #e7e9fc;
+  background-color: var(--cornfiower-cl);
 }
